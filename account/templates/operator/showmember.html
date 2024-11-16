@@ -1,0 +1,78 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}Member Table{% endblock title %}
+
+{% block content %}
+<div class="my-8 py-8 space-y-8"></div>
+<div class="py-8 rounded-lg pt-20 pb-8 max-w-7xl mx-auto">
+  <div class="flex justify-between mb-4">
+    <h2 class="text-2xl font-bold">MEMBER LIST</h2>
+    <a href="{% url 'regisoperator' %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+      {% trans 'Add Member' %}
+    </a>
+  </div>
+
+  <div class="overflow-x-auto shadow-inner border-2 border-gray-110 sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3">#</th>
+          <th scope="col" class="px-6 py-3">{% trans 'Account Name' %}</th>
+          <th scope="col" class="px-6 py-3">{% trans 'KTP Name' %}</th>
+          <th scope="col" class="px-6 py-3">{% trans 'Email' %}</th>
+          <th scope="col" class="px-6 py-3" colspan="2">{% trans 'Action' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in members %}
+        <tr class="bg-white border-b hover:bg-gray-150">
+          <td class="px-6 py-4 text-gray-700">{{ forloop.counter }}</td>
+          <td class="px-6 py-4 text-gray-700">{{ member.accountname }}</td>
+          <td class="px-6 py-4 text-gray-700">{{ member.ktpname }}</td>
+          <td class="px-6 py-4 text-gray-700">{{ member.emailmain }}</td>
+          <td class="px-6 py-4">
+            <a href="{% url 'editoperator' member.memberid %}" class="font-medium text-yellow-600 hover:underline" title="{% trans 'Update' %}">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 7.796 1.263l-2.533 2.534A4 4 0 0 1 5 8Zm4.06 5H7a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h2.172a2.999 2.999 0 0 1-.114-1.588l.674-3.372a3 3 0 0 1 .82-1.533L9.06 13Zm9.032-5a2.907 2.907 0 0 0-2.056.852L9.967 14.92a1 1 0 0 0-.273.51l-.675 3.373a1 1 0 0 0 1.177 1.177l3.372-.675a1 1 0 0 0 .511-.273l6.07-6.07a2.91 2.91 0 0 0-.944-4.742A2.907 2.907 0 0 0 18.092 8Z" clip-rule="evenodd"/>
+              </svg>              
+            </a>
+          </td>
+          
+          {% if users.usergrade != 3 %}
+          <td class="px-6 py-4">
+            <a href="/delete/{{ member.memberid }}" class="font-medium text-red-600 hover:underline" title="{% trans 'Delete' %}" onclick="return confirm('{% trans 'Are you sure you want to delete' %} {{ member.accountname }}?');">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+              </svg>
+            </a>
+          </td>
+          {% else %}
+          <td class="px-6 py-4">
+            <button class="font-medium text-gray-400 cursor-not-allowed" disabled title="{% trans 'You do not have permission to delete' %}">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+              </svg>
+            </button>
+          </td>
+          {% endif %}
+        </tr>
+        {% empty %}
+        <tr class="bg-white border-b">
+          <td colspan="5" class="px-6 py-4 text-center">{% trans 'No members found.' %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex justify-end mt-4">
+    <a href="{% url 'loginacc' %}" 
+        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
+        onclick="return confirm('{% trans 'Are you sure you want to logout?' %}');">
+      {% trans 'Logout' %}
+    </a>
+  </div>
+</div>
+<div class="my-4 py-4 space-y-4"></div>
+{% endblock %}

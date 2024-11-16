@@ -1,0 +1,79 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="bg-gray-100 h-20"></div>
+<section class="bg-gray-100 pt-10 pb-8">
+  <div class="flex flex-col items-center justify-center px-4 py-4 mx-auto md:h-auto lg:py-0">
+    <div class="w-full top-10 bg-white rounded-lg shadow md:flex-row md:max-w-xl" style="margin-top: 67px;">
+      <div class="p-6 space-y-2 md:space-y-2 sm:p-8">
+        <h1 class="text-3xl text-center font-bold text-gray-900 md:text-2xl">
+          {% trans "Welcome Back" %}
+        </h1>
+        <h2 class="text-sm text-center leading-tight tracking-tight text-gray-500 md:text-sm pb-4">
+          {% trans "Please enter your account name!" %}
+        </h2>
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="p-4 mb-4 text-sm {% if message.tags %}text-{{ message.tags }}-800 bg-{{ message.tags }}-100{% endif %} rounded-lg" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <form class="space-y-4 md:space-y-6" method="POST" action="{% url 'loginadmin' %}">
+          {% csrf_token %}
+
+          <!-- <div>
+            <label for="id_user_type" class="text-start block mt-2 mb-2 text-sm font-medium text-gray-900">
+              {% trans "User Type" %}
+            </label>
+            <select name="user_type" id="id_user_type" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-100 focus:border-primary-100 block w-full p-2.5" required>
+              <option value="" disabled selected>{% trans 'Select User Type' %}</option>
+              <option value="operator">{% trans 'Operator' %}</option>
+              <option value="member">{% trans 'Member' %}</option>
+            </select>
+          </div> -->
+
+          <div>
+            <label for="id_accountname" class="text-start block mt-2 mb-2 text-sm font-medium text-gray-900">
+              {% trans "Your Operator Account" %}
+            </label>
+            <input type="text" name="accountname" id="id_accountname" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-100 focus:border-primary-100 block w-full p-2.5" placeholder="{% trans 'Operator Account Name' %}" required>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="remember" class="text-gray-500">{% trans "Remember me" %}</label>
+              </div>
+            </div>
+            <!-- <a href="{% url 'forgot_acc' %}" class="text-sm font-medium text-primary-600 hover:underline">
+              {% trans "Forgot Account Name?" %}
+            </a> -->
+          </div>
+
+          <button type="submit" class="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            {% trans "Next" %}
+          </button>
+
+          <!-- <p class="text-sm font-light text-gray-500">
+            {% trans "Don't have an account yet?" %}
+            <a href="{% url 'regis' %}" class="font-medium text-primary-600 hover:underline">
+              {% trans "Sign up" %}
+            </a>
+          </p> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="bg-gray-100 h-10"></div>
+{% endblock %}

@@ -1,0 +1,323 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}Member Table{% endblock title %}
+
+{% block content %}
+<div class="my-8 py-8 space-y-8"></div>
+<a href="{% url 'showmember' %}" class="absolute top-5 left-5 text-gray-900 hover:text-gray-700" title="{% trans 'Back' %}" aria-label="{% trans 'Back' %}">
+  <i class="bi bi-arrow-left-square-fill text-3xl"></i>
+</a>
+
+<div class="container mx-auto px-4">
+  <div class="mt-12 ">
+    <h1 class="text-3xl font-bold">{% trans "Edit Profile" %}</h1>
+  </div>
+  <hr class="my-4">
+
+  <div class="grid grid-cols-3 md:grid-cols-3 gap-1">
+    <!-- Avatar Section -->
+    <div class= "md:col-span-4 max-w-sm">
+      <img src="//placehold.it/100" class="rounded-full mb-4" alt="avatar">
+      <input type="file" class="block w-1/2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+    </div>
+
+    <div class="md:col-span-8 h-full w-full max-w-full">
+      <!-- General Member Information -->
+      <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <h3 class="text-xl font-bold mb-4">{% trans "General Member Information" %}</h3>
+        <form class="space-y-4" role="form" method="POST" action="{% url 'updateoperatorv1' members.memberid %}">
+          {% csrf_token %}
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Member ID" %}</label>
+            <input type="text" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="memberid" id="id_memberid" maxlength="15" value="{{ members.memberid }}" readonly>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Current Member Status" %}</label>
+            <select name="memberstatus" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+              <option value="True" {% if members.memberstatus %}selected{% endif %}>{% trans "Active" %}</option>
+              <option value="False" {% if not members.memberstatus %}selected{% endif %}>{% trans "Inactive" %}</option>
+            </select>
+            {% for error in form.memberstatus.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Email" %}</label>
+            <input type="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="emailmain" id="id_emailmain" required maxlength="100" value="{{ members.emailmain }}">
+            {% for error in form.emailmain.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Password" %}</label>
+            <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="password" id="id_password" required maxlength="100" value="{{ members.password }}">
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Account Name" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="accountname" id="id_accountname" required maxlength="100" value="{{ members.accountname }}">
+            {% for error in form.accountname.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "KTP Name" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="ktpname" id="id_ktpname" required maxlength="100" value="{{ members.ktpname }}">
+            {% for error in form.ktpname.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "First Name" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="firstname" id="id_firstname" required maxlength="50" value="{{ members.firstname }}">
+            {% for error in form.firstname.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Middle Name" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="middlename" id="id_middlename" maxlength="20" value="{{ members.middlename|default:'' }}">
+            {% for error in form.middlename.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Last Name" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="lastname" id="id_lastname" required maxlength="50" value="{{ members.lastname }}">
+            {% for error in form.lastname.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="return confirm('{% trans 'Are you sure you want to change the data?' %}');">{% trans "Save Changes" %}</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Member Detail Information -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-4">{% trans "Member Detail Information" %}</h3>
+        <form class="space-y-4" role="form" method="POST" 
+              action="{% if membersdetail %}{% url 'updateoperatorv2' membersdetail.memberid %}{% else %}{% url 'updateoperatorv1' members.memberid %}{% endif %}"
+              enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Member ID" %}</label>
+            <input type="text" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                   name="memberid" id="id_memberid" value="{{ membersdetail.memberid }}" readonly 
+                   placeholder="{% trans 'No Member ID available' %}">
+            {% for error in form.memberid.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Join Date" %}</label>
+            <input type="{{ membersdetail|yesno:'date,text' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="join_date" id="id_join_date" value="{{ membersdetail.join_date|date:'Y-m-d' }}" 
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No join date available' %}"{% endif %}>
+            {% for error in form.join_date.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Call Sign" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="callsign" id="id_callsign" value="{{ membersdetail.callsign }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No call sign available' %}"{% endif %}>
+            {% for error in form.callsign.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Participant" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="participant" id="id_participant" value="{{ membersdetail.participant }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No participant available' %}"{% endif %}>
+            {% for error in form.participant.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Instructor" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="instructor" id="id_instructor" value="{{ membersdetail.instructor }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No instructor available' %}"{% endif %}>
+            {% for error in form.instructor.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Author" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="author" id="id_author" value="{{ membersdetail.author }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No author available' %}"{% endif %}>
+            {% for error in form.author.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Referral" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="referral" id="id_referral" value="{{ membersdetail.referral }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No referral available' %}"{% endif %}>
+            {% for error in form.referral.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Date of Birth" %}</label>
+            <input type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="dob" id="id_dob" value="{{ membersdetail.dob|date:'Y-m-d' }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No date of birth available' %}"{% endif %}>
+            {% for error in form.dob.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "KTP Number" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="ktpnumber" id="id_ktpnumber" value="{{ membersdetail.ktpnumber }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No ktp number available' %}"{% endif %}>
+            {% for error in form.ktpnumber.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Tax ID" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="taxid" id="id_taxid" value="{{ membersdetail.taxid }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No tax ID available' %}"{% endif %}>
+            {% for error in form.taxid.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Email Main" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="emailmain" id="id_emailmain" required value="{{ membersdetail.emailmain }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No email main available' %}"{% endif %}>
+            {% for error in form.emailmain.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Email Alternative" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="emailalt" id="id_emailalt" value="{{ membersdetail.emailalt }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No email alternative available' %}"{% endif %}>
+            {% for error in form.emailalt.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Phone" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="phone" id="id_phone" value="{{ membersdetail.phone }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No phone number available' %}"{% endif %}>
+            {% for error in form.phone.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "WhatsApp" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="whatsapp" id="id_whatsapp" value="{{ membersdetail.whatsapp }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No WhatsApp available' %}"{% endif %}>
+            {% for error in form.whatsapp.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Telegram" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="telegram" id="id_telegram" value="{{ membersdetail.telegram }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Telegram available' %}"{% endif %}>
+            {% for error in form.telegram.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Referral ID" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="referralid" id="id_referralid" value="{{ membersdetail.referralid }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Referral ID available' %}"{% endif %}>
+            {% for error in form.referralid.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Paid Class" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="paidclass" id="id_paidclass" value="{{ membersdetail.paidclass }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Paid Class available' %}"{% endif %}>
+            {% for error in form.paidclass.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Free Class" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="freeclass" id="id_freeclass" value="{{ membersdetail.freeclass }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Free Class available' %}"{% endif %}>
+            {% for error in form.freeclass.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Point Total" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="pointtotal" id="id_pointtotal" value="{{ membersdetail.pointtotal }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Point Total available' %}"{% endif %}>
+            {% for error in form.pointtotal.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900">{% trans "Point Redeem" %}</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   name="pointredeem" id="id_pointredeem" value="{{ membersdetail.pointredeem }}"
+                   {% if not membersdetail %}readonly placeholder="{% trans 'No Point Redeem available' %}"{% endif %}>
+            {% for error in form.pointredeem.errors %}
+              <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="return confirm('{% trans 'Are you sure you want to change the data?' %}');">{% trans "Save Changes" %}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

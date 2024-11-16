@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div style="background: #FFF; position: fixed; left: 80%; padding: 10px; top: 85%; margin: 0;">
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <select name="language" class="form-select fw-bold" style="width: 150px; font-size: 16px; padding: 10px;" aria-label="{% trans 'Language' %}" onchange="this.form.submit()">
+      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+      <option value="id" {% if LANGUAGE_CODE == 'id' %}selected{% endif %}>Indonesian</option>
+    </select>
+    <input type="hidden" name="next" value="{{ request.path }}">
+  </form>
+</div>
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <h1 class="fw-bold mb-2">{% trans "REGISTRATION" %}</h1>
+        <hr>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" class="post-form" action="{% url 'regis' %}">
+            {% csrf_token %}  
+
+            <div class="mb-3">
+                <label for="emailmain" class="form-label">Email</label>
+                <input type="email" class="form-control" name="emailmain" id="id_emailmain" required>
+                {% if form.emailmain.errors %}
+                    {% for error in form.emailmain.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}   
+            </div>         
+
+            <div class="mb-3"> 
+                <label for="password" class="form-label">{% trans "Password" %}</label>  
+                {{ form.password }}   
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="accountname" class="form-label">{% trans "Account Name" %}</label>
+                <input type="text" class="form-control" name="accountname" id="id_accountname" required>
+                {% if form.accountname.errors %}
+                    {% for error in form.accountname.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>      
+
+            <div class="mb-3">
+                <label for="ktpname" class="form-label">{% trans "KTP Name" %}</label>
+                {{ form.ktpname }} 
+                {% if form.ktpname.errors %}
+                    {% for error in form.ktpname.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>         
+
+            <div class="mb-3"> 
+                <label for="firstname" class="form-label">{% trans "First Name" %}</label>  
+                {{ form.firstname }}   
+                {% if form.firstname.errors %}
+                    {% for error in form.firstname.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="mb-3"> 
+                <label for="middlename" class="form-label">{% trans "Middle Name" %}</label>  
+                {{ form.middlename }}   
+                {% if form.middlename.errors %}
+                    {% for error in form.middlename.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="mb-3"> 
+                <label for="lastname" class="form-label">{% trans "Last Name" %}</label>  
+                {{ form.lastname }}   
+                {% if form.lastname.errors %}
+                    {% for error in form.lastname.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success btn-lg fw-bold" style="border-radius: 1rem;">{% trans "Sign Up" %}</button>  
+            </div>
+
+            <!-- Adding space below the submit button -->
+            <div style="margin-top: 20px;"></div>
+
+            <!-- Adding Login button -->
+            <div class="d-grid mt-3">  
+                <a href="/" class="btn btn-primary btn-lg fw-bold" style="background-color: #0e345c; border-radius: 1rem;">Login</a>  
+            </div>
+            
+            <!-- Adding space below the submit button -->
+            <div style="margin-top: 40px;"></div>
+
+        </form>  
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

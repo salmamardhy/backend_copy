@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}Member Table{% endblock title %}
+
+{% block content %}
+<!-- <div style="position: absolute; top: 20px; left: 0%; margin: 0;"> -->
+<div style="background: #FFF; position: fixed; left: 80%; padding: 10px; top: 85%; margin: 0;">
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <select name="language" class="form-select fw-bold" style="width: 150px; font-size: 16px; padding: 10px;" aria-label="{% trans 'Language' %}" onchange="this.form.submit()">
+      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+      <option value="id" {% if LANGUAGE_CODE == 'id' %}selected{% endif %}>Indonesian</option>
+    </select>
+    <input type="hidden" name="next" value="{{ request.path }}">
+  </form>
+</div>
+
+<div class="container">
+    <div style="margin-top: 50px;">
+        <h1>{% trans "Edit Member Detail" %}</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                {% if employee.profile_image %}  <!-- Assuming you have a field for profile image -->
+                    <img src="{{ employee.profile_image.url }}" class="avatar img-circle" alt="avatar" style="margin-bottom: 20px;">
+                {% else %}
+                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar" style="margin-bottom: 20px;">
+                {% endif %}
+                
+                <input type="file" class="form-control" name="profile_image"> <!-- Add name attribute to access in form submission -->
+                <a href="/edit/{{ employee.memberid }}" class="btn btn-secondary mt-2">{% trans "View Profile Information" %}</a>
+            </div>
+        </div>
+        
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <h3>{% trans "Member Detail" %}</h3>
+                </div>
+            </div>
+
+            <form class="form-horizontal" role="form" method="POST" action="{% url 'updatememberdetail' employee.memberid %}" enctype="multipart/form-data">
+                {% if form.non_field_errors %}
+                    <div class="text-danger">{{ form.non_field_errors }}</div>
+                {% endif %}
+
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Member ID" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="memberid" id="id_memberid" required maxlength="15" value="{{ employee.memberid }}" readonly/>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Join Date" %}</label>
+                    <div class="col-lg-8">
+                        <input type="date" class="form-control" name="join_date" id="id_join_date" value="{{ employee.join_date|date:'Y-m-d' }}" readonly/>
+                        {% for error in form.join_date.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">Current Member Status</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" value="{% if employee.memberstatus == 1 %}Yes{% else %}No{% endif %}" readonly/>
+                    </div>
+                </div> -->
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Call Sign" %}</label>
+                    <div class="col-lg-8">  <!-- Adjust the column width here -->
+                        <input type="text" class="form-control" name="callsign" id="id_callsign" required maxlength="25" value="{{ employee.callsign }}" />
+                        {% for error in form.callsign.errors %}
+                            <div class="text-danger">{{ error }}</div>  <!-- Ensure the error message is red -->
+                        {% endfor %}
+                    </div>
+                </div>                
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Participant" %}</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" name="participant" id="id_participant" required value="{{ employee.participant }}" />
+                        {% for error in form.participant.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Instructor" %}</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" name="instructor" id="id_instructor" required value="{{ employee.instructor }}" />
+                        {% for error in form.instructor.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Author" %}</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" name="author" id="id_author" required value="{{ employee.author }}" />
+                        {% for error in form.author.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Referral" %}</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" name="referral" id="id_referral" required value="{{ employee.referral }}" />
+                        {% for error in form.referral.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Date of Birth" %}</label>
+                    <div class="col-lg-8">
+                        <input type="date" class="form-control" name="dob" id="id_dob" required value="{{ employee.dob|date:'Y-m-d' }}" />
+                        {% for error in form.dob.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "KTP Number" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="ktpnumber" id="id_ktpnumber" required maxlength="30" value="{{ employee.ktpnumber }}" />
+                        {% for error in form.ktpnumber.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Tax ID" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="taxid" id="id_taxid" maxlength="30" value="{{ employee.taxid }}" />
+                        {% for error in form.taxid.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Email Main" %}</label>
+                    <div class="col-lg-8">
+                        <input type="email" class="form-control" name="emailmain" id="id_emailmain" required maxlength="50" value="{{ employee.emailmain }}" />
+                        {% for error in form.emailmain.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Email Alternative" %}</label>
+                    <div class="col-lg-8">
+                        <input type="email" class="form-control" name="emailalt" id="id_emailalt" maxlength="50" value="{{ employee.emailalt }}" />
+                        {% for error in form.emailalt.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Phone" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="phone" id="id_phone" required maxlength="20" value="{{ employee.phone }}" />
+                        {% for error in form.phone.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "WhatsApp" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="whatsapp" id="id_whatsapp" required maxlength="20" value="{{ employee.whatsapp }}" />
+                        {% for error in form.whatsapp.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Telegram" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="telegram" id="id_telegram" maxlength="20" value="{{ employee.telegram }}" />
+                        {% for error in form.telegram.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Referral ID" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="referralid" id="id_referralid" maxlength="30" value="{{ employee.referralid }}" />
+                        {% for error in form.referralid.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Paid Class" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="paidclass" id="id_paidclass" maxlength="30" value="{{ employee.paidclass }}" readonly/>
+                        {% for error in form.paidclass.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Free Class" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="freeclass" id="id_freeclass" maxlength="30" value="{{ employee.freeclass }}" readonly/>
+                        {% for error in form.freeclass.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Point Total" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="pointtotal" id="id_pointtotal" maxlength="30" value="{{ employee.pointtotal }}" readonly/>
+                        {% for error in form.pointtotal.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Point Redeem" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="pointredeem" id="id_pointredeem" maxlength="30" value="{{ employee.pointredeem }}" readonly/>
+                        {% for error in form.pointredeem.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-5 control-label"></label>
+                    <div class="col-md-8 d-flex justify-content-between">
+                        <div>
+                            <input type="submit" class="btn btn-primary me-2 mb-3" value="{% trans 'Save Changes' %}"> <!-- 'mb-3' adds bottom margin -->
+                        </div>
+                        <div>
+                            <a href="{% url 'loginacc' %}" 
+                            class="btn btn-danger me-2 mb-3" 
+                            onclick="return confirm('{% trans 'Are you sure you want to logout?' %}');">
+                            {% trans 'Logout' %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

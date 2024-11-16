@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div style="background: #FFF; position: fixed; left: 80%; padding: 10px; top: 85%; margin: 0;">
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <select name="language" class="form-select fw-bold" style="width: 150px; font-size: 16px; padding: 10px;" aria-label="{% trans 'Language' %}" onchange="this.form.submit()">
+      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+      <option value="id" {% if LANGUAGE_CODE == 'id' %}selected{% endif %}>Indonesian</option>
+    </select>
+    <input type="hidden" name="next" value="{{ request.path }}">
+  </form>
+</div>
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-white" style="background-color: #0e345c; border-radius: 1rem;">
+          <!-- Card with Navy Blue background -->
+          <div class="card-body p-5 text-center">
+            <!-- Back button positioned in the corner -->
+            <a href="{% url 'loginacc' %}" class="text-white mb-4 position-absolute" style="top: 20px; left: 20px;" title="{% trans 'Back' %}" aria-label="{% trans 'Back' %}">
+              <i class="bi bi-arrow-return-left fs-5" style="font-weight: bold;"></i>
+              <!-- <i class="bi bi-arrow-left-square-fill" style="font-weight: bold; font-size: 30px; color: white;"></i> -->
+            </a>
+
+            <div class="mb-md-4 mt-md-4 pb-3">
+              <h2 class="fw-bold mb-2">{% trans "Forgot Account" %}</h2>
+              <p class="text-white-50 mb-4">{% trans "Please enter your Email to get your account name!" %}</p>
+
+              <!-- Display error messages -->
+              {% if messages %}
+                  {% for message in messages %}
+                      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+              {% endif %}
+
+              <form method="POST" action="{% url 'forgot_acc' %}">
+                  {% csrf_token %}
+                  <div data-mdb-input-init class="form-outline form-white mb-2">
+                    <input type="text" class="form-control" name="emailmain" placeholder="{% trans 'Enter Email' %}" id="id_emailmain" required>
+                  </div>
+
+                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!"></a></p>
+                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-light fw-bold btn-md px-4" type="submit">{% trans "Send" %}</button>
+              </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

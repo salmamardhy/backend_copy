@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load i18n %}  <!-- Load translation tags -->
+
+{% block title %}Member Table{% endblock title %}
+
+{% block content %}
+<div style="background: #FFF; position: fixed; left: 80%; padding: 10px; top: 85%; margin: 0;">
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <select name="language" class="form-select fw-bold" style="width: 150px; font-size: 16px; padding: 10px;" aria-label="{% trans 'Language' %}" onchange="this.form.submit()">
+      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+      <option value="id" {% if LANGUAGE_CODE == 'id' %}selected{% endif %}>Indonesian</option>
+    </select>
+    <input type="hidden" name="next" value="{{ request.path }}">
+  </form>
+</div>
+  
+<div class="container">
+    <div style="margin-top: 50px;"> <!-- Atur jarak sesuai kebutuhan -->
+        <h1>{% trans "Edit Profile" %}</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar" style="margin-bottom: 20px;"> <!-- Added margin here -->
+                <!-- <h6>Upload a different photo...</h6> -->
+                
+                <input type="file" class="form-control">
+                {% if employee.memberstatus %}
+                <a href="/memberdetail/{{ employee.memberid }}" class="btn btn-secondary mt-2">{% trans "View Member Detail" %}</a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <!-- <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+            </div> -->
+
+            <p></p>
+
+            <div class="row" style="margin-bottom: 10px;">  <!-- Added row for layout -->
+                <div class="col-md-6"> <!-- Column for Member Info -->
+                    <h3>{% trans "Profile Information" %}</h3>
+                </div>
+            </div>
+            
+            <form class="form-horizontal" role="form" method="POST" action="{% url 'update' employee.memberid %}">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Member ID" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="memberid" id="id_memberid" required maxlength="15" value="{{ employee.memberid }}" readonly/>    
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="id_memberstatus" class="col-lg-3 control-label">{% trans "Current Member Status" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" 
+                               value="{% if employee.memberstatus %}{% trans 'Active' %}{% else %}{% trans 'Inactive' %}{% endif %}" 
+                               readonly>
+                        <input type="hidden" name="memberstatus" value="{{ employee.memberstatus }}">
+                    </div>
+                </div>                
+                
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Email" %}</label>
+                    <div class="col-lg-8">
+                        <input type="email" class="form-control" name="emailmain" id="id_emailmain" required maxlength="100" value="{{ employee.emailmain }}" />
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Password" %}</label>
+                    <div class="col-lg-8">
+                        <input type="password" class="form-control" name="password" id="id_password" required maxlength="30" value="{{ employee.password }}" />
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Account Name" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="accountname" id="id_accountname" required maxlength="100" value="{{ employee.accountname }}" />
+                        {% for error in form.accountname.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "KTP Name" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="ktpname" id="id_ktpname" required maxlength="100" value="{{ employee.ktpname }}" />
+                        {% for error in form.ktpname.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "First Name" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="firstname" id="id_firstname" required maxlength="50" value="{{ employee.firstname }}" />
+                        {% for error in form.firstname.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Middle Name" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="middlename" id="id_middlename" maxlength="20" 
+                               value="{{ employee.middlename|default:'' }}" />
+                        {% for error in form.middlename.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label class="col-lg-3 control-label">{% trans "Last Name" %}</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="lastname" id="id_lastname" required maxlength="50" value="{{ employee.lastname }}" />
+                        {% for error in form.lastname.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-5 control-label"></label>
+                    <div class="col-md-8 d-flex justify-content-between">
+                        <div>
+                            <input type="submit" class="btn btn-primary me-2 mb-3" value="{% trans 'Save Changes' %}"> <!-- 'mb-3' adds bottom margin -->
+                        </div>
+                        <div>
+                            <a href="{% url 'logout' %}" 
+                            class="btn btn-danger me-2 mb-3" 
+                            onclick="return confirm('{% trans 'Are you sure you want to logout?' %}');">
+                            {% trans 'Logout' %}
+                            </a>
+                            <!-- 
+                            <span></span>
+                            <a href="/delete/{{ employee.memberid }}" class="btn btn-danger mb-3" onclick="return confirm('Are you sure you want to delete?');">Delete</a> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>
+{% endblock content %}

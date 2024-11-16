@@ -1,0 +1,75 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="my-4 py-4 space-y-4"></div>
+<section class="relative bg-gray-100 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] mt-20">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative z-10">
+        <!-- Announcement banner -->
+        <a href="#" class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+            <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3">New</span>
+            <span class="text-sm font-medium">New courses were launched! See what's new</span>
+            <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 9L5 5L1 1" />
+            </svg>
+        </a>
+
+        <!-- Hero section -->
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+            Welcome to Our Courses
+        </h1>
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
+            Discover a variety of courses that help unlock your potential and boost your knowledge.
+        </p>
+
+        <!-- Login button -->
+        <a href="{% url 'loginacc' %}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
+            {% trans "Login to Get Started" %}
+            <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12M9 1l4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+    <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+</section>
+
+<!-- Course cards -->
+<div class="mt-10 mx-5 pl-10 mr-10">
+    <div class="flex justify-between items-center mb-5 ml-8 mr-10">
+        <h2 class="mb-4 text-xl font-bold tracking-tight text-gray-900 md:text-xl lg:text-3xl">Latest Event</h2>
+        <!-- <button type="button" class="mr-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+            More
+            <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12M9 1l4 4L9 9" />
+            </svg>
+        </button> -->
+    </div>
+
+    <div class="flex justify-start space-x-10 mt-5 ml-10 mr-10">
+        <!-- Course 1 -->
+        {% for event in events %}
+        <div class="shadow-lg max-w-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-100">
+            <a href="{% url 'booking_event' event.event_id %}">
+                <img class="rounded-t-lg w-80 h-auto" src="{{ event.event_photo }}" alt="{{ event.title }}" />
+            </a>
+            <div class="p-5">
+                <a href="{% url 'booking_event' event.event_id %}">
+                    <h3 class="mb-2 text-lg font-bold text-gray-900">{{ event.event_name }}</h3>
+                </a>
+                <!-- <p class="mb-3 text-gray-700">{{ event.description }}</p> -->
+                <a href="{% url 'booking_event' event.event_id %}" class="inline-flex items-center px-3 py-2 text-sm text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+                    {% trans "Read more" %}
+                    <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12M9 1l4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="bg-white h-10"></div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="bg-white h-7"></div>
+<div class="container mx-auto px-2 pt-20">
+    <div class="flex justify-center">
+      <div class="shadow-md flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row h-dvh w-full max-w-7xl mt-10">
+        <img class="object-cover rounded-t-lg h-96 md:h-96 md:rounded-none md:rounded-l-lg cursor-pointer" src="{{ event.event_photo }}" alt="{{ event.name }}" onclick="openModal(this.src)" />
+
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 ml-2 text-start text-2xl font-bold tracking-tight text-gray-900">{{ event.event_name }}</h5>
+          <ol class="ps-5 max-w-md space-y-1 text-gray-500 list-decimal list-inside">
+              <li>
+                  <span class="font-semibold text-gray-900"><i class="bi bi-clock"></i> {% trans "Time" %}:</span> <span class="text-gray-600">{{ event.event_time }} WIB</span>
+              </li>
+              <li>
+                  <span class="font-semibold text-gray-900"><i class="bi bi-geo-alt"></i> {% trans "Location" %}:</span> <span class="text-gray-600">{{ event.event_location }}</span>
+              </li>
+              <li>
+                  <span class="font-semibold text-gray-900"><i class="bi bi-currency-dollar"></i> {% trans "Cost" %}:</span> <span class="text-gray-600">Rp{{ event.cost }}</span>
+              </li>
+          </ol>
+          
+          
+          <div class="mt-4 ml-2">
+            <a href="{% url 'booking_index' event.event_id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+              {% trans "Book Now" %}
+              <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="bg-white h-12"></div>
+{% endblock %}

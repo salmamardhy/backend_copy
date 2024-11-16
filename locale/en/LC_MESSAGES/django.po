@@ -1,0 +1,686 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-16 00:55+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\account\templates\editmember.html:10
+#: .\account\templates\forgot-acc.html:11
+#: .\account\templates\login-token.html:11
+#: .\account\templates\memberdetail.html:12
+#: .\account\templates\operator\editoperator.html:10
+#: .\account\templates\operator\regisoperator.html:11
+#: .\account\templates\operator\showmember.html:10
+#: .\account\templates\registration.html:11
+msgid "Language"
+msgstr ""
+
+#: .\account\templates\editmember.html:20
+#: .\account\templates\operator\editoperator.html:24
+msgid "Edit Profile"
+msgstr ""
+
+#: .\account\templates\editmember.html:32
+msgid "View Member Detail"
+msgstr ""
+
+#: .\account\templates\editmember.html:49
+msgid "Profile Information"
+msgstr ""
+
+#: .\account\templates\editmember.html:56
+#: .\account\templates\memberdetail.html:55
+#: .\account\templates\operator\editoperator.html:45
+#: .\account\templates\operator\editoperator.html:150
+msgid "Member ID"
+msgstr ""
+
+#: .\account\templates\editmember.html:63
+#: .\account\templates\operator\editoperator.html:52
+#: .\account\templates\operator\regisoperator.html:42
+msgid "Current Member Status"
+msgstr ""
+
+#: .\account\templates\editmember.html:66
+#: .\account\templates\operator\editoperator.html:55
+#: .\account\templates\operator\regisoperator.html:45
+msgid "Active"
+msgstr ""
+
+#: .\account\templates\editmember.html:66
+#: .\account\templates\operator\editoperator.html:56
+#: .\account\templates\operator\regisoperator.html:46
+msgid "Inactive"
+msgstr ""
+
+#: .\account\templates\editmember.html:73
+#: .\account\templates\operator\editoperator.html:66
+#: .\account\templates\operator\showmember.html:34
+#: .\booking\templates\booking.html:37
+msgid "Email"
+msgstr ""
+
+#: .\account\templates\editmember.html:80
+#: .\account\templates\operator\editoperator.html:76
+#: .\account\templates\operator\regisoperator.html:65
+#: .\account\templates\registration.html:48
+msgid "Password"
+msgstr ""
+
+#: .\account\templates\editmember.html:87 .\account\templates\login-acc.html:45
+#: .\account\templates\operator\editoperator.html:83
+#: .\account\templates\operator\regisoperator.html:71
+#: .\account\templates\operator\showmember.html:32
+#: .\account\templates\registration.html:54
+msgid "Account Name"
+msgstr "Account Name"
+
+#: .\account\templates\editmember.html:97
+#: .\account\templates\operator\editoperator.html:93
+#: .\account\templates\operator\regisoperator.html:81
+#: .\account\templates\operator\showmember.html:33
+#: .\account\templates\registration.html:64
+msgid "KTP Name"
+msgstr ""
+
+#: .\account\templates\editmember.html:107
+#: .\account\templates\operator\editoperator.html:103
+#: .\account\templates\operator\regisoperator.html:92
+#: .\account\templates\registration.html:74
+msgid "First Name"
+msgstr ""
+
+#: .\account\templates\editmember.html:117
+#: .\account\templates\operator\editoperator.html:113
+#: .\account\templates\operator\regisoperator.html:102
+#: .\account\templates\registration.html:84
+msgid "Middle Name"
+msgstr ""
+
+#: .\account\templates\editmember.html:128
+#: .\account\templates\operator\editoperator.html:123
+#: .\account\templates\operator\regisoperator.html:112
+#: .\account\templates\registration.html:94
+msgid "Last Name"
+msgstr ""
+
+#: .\account\templates\editmember.html:141
+#: .\account\templates\memberdetail.html:262
+#: .\account\templates\operator\editoperator.html:135
+#: .\account\templates\operator\editoperator.html:393
+msgid "Save Changes"
+msgstr ""
+
+#: .\account\templates\editmember.html:146
+#: .\account\templates\memberdetail.html:267
+#: .\account\templates\operator\showmember.html:77
+msgid "Are you sure you want to logout?"
+msgstr ""
+
+#: .\account\templates\editmember.html:147
+#: .\account\templates\memberdetail.html:268
+#: .\account\templates\operator\showmember.html:78
+msgid "Logout"
+msgstr ""
+
+#: .\account\templates\forgot-acc.html:27
+#: .\account\templates\login-token.html:25
+#: .\account\templates\operator\editoperator.html:18
+#: .\account\templates\operator\regisoperator.html:19
+msgid "Back"
+msgstr ""
+
+#: .\account\templates\forgot-acc.html:33
+#, fuzzy
+#| msgid "Forgot Account Name?"
+msgid "Forgot Account"
+msgstr "Forgot Account Name?"
+
+#: .\account\templates\forgot-acc.html:34
+#, fuzzy
+#| msgid "Please enter your account name!"
+msgid "Please enter your Email to get your account name!"
+msgstr "Please enter your account name!"
+
+#: .\account\templates\forgot-acc.html:48
+msgid "Enter Email"
+msgstr ""
+
+#: .\account\templates\forgot-acc.html:52
+msgid "Send"
+msgstr ""
+
+#: .\account\templates\login-acc.html:13
+msgid "Welcome Back"
+msgstr ""
+
+#: .\account\templates\login-acc.html:16
+msgid "Please enter your account name!"
+msgstr "Please enter your account name!"
+
+#: .\account\templates\login-acc.html:32
+msgid "User Type"
+msgstr ""
+
+#: .\account\templates\login-acc.html:35
+msgid "Select User Type"
+msgstr ""
+
+#: .\account\templates\login-acc.html:36
+msgid "Operator"
+msgstr ""
+
+#: .\account\templates\login-acc.html:37
+msgid "Member"
+msgstr ""
+
+#: .\account\templates\login-acc.html:43
+#, fuzzy
+#| msgid "Forgot Account Name?"
+msgid "Your Account"
+msgstr "Forgot Account Name?"
+
+#: .\account\templates\login-acc.html:54
+msgid "Remember me"
+msgstr ""
+
+#: .\account\templates\login-acc.html:58
+msgid "Forgot Account Name?"
+msgstr "Forgot Account Name?"
+
+#: .\account\templates\login-acc.html:63
+msgid "Next"
+msgstr "Next"
+
+#: .\account\templates\login-acc.html:67
+msgid "Don't have an account yet?"
+msgstr ""
+
+#: .\account\templates\login-acc.html:69
+msgid "Sign up"
+msgstr ""
+
+#: .\account\templates\login-token.html:32
+msgid "WELCOME"
+msgstr ""
+
+#: .\account\templates\login-token.html:33
+msgid "Please look in your Email for your token!"
+msgstr ""
+
+#: .\account\templates\login-token.html:47
+msgid "Enter Token"
+msgstr ""
+
+#: .\account\templates\login-token.html:50
+msgid "Token not received?"
+msgstr ""
+
+#: .\account\templates\login-token.html:51
+msgid "Resend Token"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:22
+msgid "Edit Member Detail"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:36
+msgid "View Profile Information"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:44
+msgid "Member Detail"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:62
+#: .\account\templates\operator\editoperator.html:162
+msgid "Join Date"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:79
+#: .\account\templates\operator\editoperator.html:173
+msgid "Call Sign"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:89
+#: .\account\templates\operator\editoperator.html:186
+msgid "Participant"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:99
+#: .\account\templates\operator\editoperator.html:198
+msgid "Instructor"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:109
+#: .\account\templates\operator\editoperator.html:210
+msgid "Author"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:119
+#: .\account\templates\operator\editoperator.html:222
+#: .\booking\templates\booking.html:78
+msgid "Referral"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:129
+#: .\account\templates\operator\editoperator.html:234
+msgid "Date of Birth"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:139
+#: .\account\templates\operator\editoperator.html:246
+msgid "KTP Number"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:149
+#: .\account\templates\operator\editoperator.html:258
+msgid "Tax ID"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:159
+#: .\account\templates\operator\editoperator.html:270
+msgid "Email Main"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:169
+#: .\account\templates\operator\editoperator.html:283
+msgid "Email Alternative"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:179
+#: .\account\templates\operator\editoperator.html:295
+#: .\booking\templates\booking.html:47
+msgid "Phone"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:189
+#: .\account\templates\operator\editoperator.html:307
+msgid "WhatsApp"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:199
+#: .\account\templates\operator\editoperator.html:319
+msgid "Telegram"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:209
+#: .\account\templates\operator\editoperator.html:331
+msgid "Referral ID"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:219
+#: .\account\templates\operator\editoperator.html:343
+msgid "Paid Class"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:229
+#: .\account\templates\operator\editoperator.html:355
+msgid "Free Class"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:239
+#: .\account\templates\operator\editoperator.html:367
+msgid "Point Total"
+msgstr ""
+
+#: .\account\templates\memberdetail.html:249
+#: .\account\templates\operator\editoperator.html:379
+msgid "Point Redeem"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:39
+msgid "General Member Information"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:135
+#: .\account\templates\operator\editoperator.html:393
+msgid "Are you sure you want to change the data?"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:143
+msgid "Member Detail Information"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:154
+msgid "No Member ID available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:165
+msgid "No join date available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:176
+msgid "No call sign available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:189
+msgid "No participant available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:201
+msgid "No instructor available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:213
+msgid "No author available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:225
+msgid "No referral available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:237
+msgid "No date of birth available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:249
+msgid "No ktp number available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:261
+msgid "No tax ID available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:273
+msgid "No email main available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:286
+msgid "No email alternative available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:298
+msgid "No phone number available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:310
+msgid "No WhatsApp available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:322
+msgid "No Telegram available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:334
+msgid "No Referral ID available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:346
+msgid "No Paid Class available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:358
+msgid "No Free Class available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:370
+msgid "No Point Total available"
+msgstr ""
+
+#: .\account\templates\operator\editoperator.html:382
+msgid "No Point Redeem available"
+msgstr ""
+
+#: .\account\templates\operator\regisoperator.html:27
+msgid "REGISTRATION BY OPERATOR"
+msgstr ""
+
+#: .\account\templates\operator\regisoperator.html:122
+#: .\account\templates\registration.html:104
+#: .\booking\templates\booking.html:90
+msgid "Sign Up"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:23
+#: .\account\templates\operator\showmember.html:112
+msgid "Add Member"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:35
+msgid "Action"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:46
+msgid "Update"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:53
+msgid "Delete"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:53
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:59
+msgid "You do not have permission to delete"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:67
+msgid "No members found."
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:89
+#: .\account\templates\operator\showmember.html:98
+msgid "Member List"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:93
+msgid "Overview"
+msgstr ""
+
+#: .\account\templates\operator\showmember.html:105
+msgid "Class"
+msgstr ""
+
+#: .\account\templates\registration.html:23
+msgid "REGISTRATION"
+msgstr ""
+
+#: .\account\views.py:55 .\account\views.py:125
+msgid "Verification token sent! Please check your email."
+msgstr ""
+
+#: .\account\views.py:73
+msgid "Account name cannot be empty!"
+msgstr ""
+
+#: .\account\views.py:101
+msgid "Operator does not exist. Please try again!"
+msgstr ""
+
+#: .\account\views.py:143
+msgid "Account name not found in session!"
+msgstr ""
+
+#: .\account\views.py:172
+msgid "Account created successfully!"
+msgstr ""
+
+#: .\account\views.py:177 .\account\views.py:189 .\account\views.py:207
+#: .\account\views.py:225
+msgid "Invalid token! Please enter the correct one."
+msgstr ""
+
+#: .\account\views.py:186
+msgid "Token verified successfully!"
+msgstr ""
+
+#: .\account\views.py:249 .\account\views.py:268 .\account\views.py:288
+msgid "A new token has been sent to your email!"
+msgstr ""
+
+#: .\account\views.py:299
+#, fuzzy
+#| msgid "Please enter your account name!"
+msgid "Please Enter Your Main Email!"
+msgstr "Please enter your account name!"
+
+#: .\account\views.py:318
+msgid "Account name has been sent! Please check your email."
+msgstr ""
+
+#: .\account\views.py:322
+msgid "Account does not exist. Please try again or sign up!"
+msgstr ""
+
+#: .\account\views.py:378 .\account\views.py:483
+msgid "Failed to update. Please check your input."
+msgstr ""
+
+#: .\booking\templates\booking.html:12
+msgid "EVENT BOOKING"
+msgstr ""
+
+#: .\booking\templates\booking.html:27
+msgid "Name"
+msgstr ""
+
+#: .\booking\templates\booking.html:57
+msgid "Is your phone number registered with WhatsApp?"
+msgstr ""
+
+#: .\booking\templates\booking.html:59
+msgid "Yes"
+msgstr ""
+
+#: .\booking\templates\booking.html:60
+msgid "No"
+msgstr ""
+
+#: .\booking\templates\booking.html:68
+msgid "Event"
+msgstr ""
+
+#: .\booking\templates\booking.html:88
+msgid "Note: Please fill the * required fields"
+msgstr ""
+
+#: .\booking\templates\event.html:15
+msgid "Time"
+msgstr ""
+
+#: .\booking\templates\event.html:18
+msgid "Location"
+msgstr ""
+
+#: .\booking\templates\event.html:21
+msgid "Cost"
+msgstr ""
+
+#: .\booking\templates\event.html:28
+msgid "Book Now"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:7
+msgid "Thank you for choosing Alpha Seven Force for your training needs"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:12
+msgid "We have received the following booking:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:17
+msgid "1. Booker Name:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:21
+msgid "2. Event:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:25
+msgid "3. Location:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:31
+msgid "4. Time:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:37
+msgid "Payment can be made to the following accounts:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:42
+msgid "1. Bank BCA Account Number:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:46
+msgid "2. Bank BRI Account Number:"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:52
+msgid "This offer is valid for 24 hours"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:56
+msgid "Best regards,"
+msgstr ""
+
+#: .\booking\templates\payment_instructions.html:57
+msgid "The Alpha Seven Force Team"
+msgstr ""
+
+#: .\static\templates\footer.html:7
+msgid "All Rights Reserved."
+msgstr ""
+
+#: .\static\templates\footer.html:11 .\static\templates\header.html:34
+msgid "About"
+msgstr ""
+
+#: .\static\templates\footer.html:14
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\static\templates\footer.html:17
+msgid "Licensing"
+msgstr ""
+
+#: .\static\templates\footer.html:20
+msgid "Contact"
+msgstr ""
+
+#: .\static\templates\header.html:8
+msgid "Alpha Seven Force"
+msgstr ""
+
+#: .\static\templates\header.html:16 .\webapp\settings.py:138
+msgid "English"
+msgstr "English"
+
+#: .\static\templates\header.html:19 .\webapp\settings.py:139
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: .\static\templates\header.html:30
+msgid "Home"
+msgstr ""
+
+#: .\static\templates\header.html:38
+msgid "Services"
+msgstr ""
+
+#: .\static\templates\header.html:42
+msgid "Login"
+msgstr ""
+
+#~ msgid "Enter Account Name!"
+#~ msgstr "Enter Account Name!"
+
+#~ msgid "Create account"
+#~ msgstr "Create account"
