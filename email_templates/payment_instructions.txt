@@ -1,0 +1,39 @@
+{% extends "@base.html" %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block content %}
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        Thank you for choosing Alpha Seven Force for your training needs.
+    </h5>
+    <hr class="h-px my-8 bg-gray-200 border-0">
+
+    <p class="mb-3 font-normal text-gray-600">
+        We have received the following booking:
+    </p>
+
+    <ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside">
+        <li>Booker Name: <span class="font-semibold text-gray-900">{name}</span></li>
+        <li>Event      : <span class="font-semibold text-gray-900">{event_name}</span></li>
+        <li>Location   : <span class="font-semibold text-gray-900">{event_url}</span></li>
+        <li>Time       : <span class="font-semibold text-gray-900">{event_time}</span></li>
+    </ol>
+
+    <p class="mb-3 font-normal text-gray-600">
+        Payment can be made to the following accounts:
+    </p>
+
+    <ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside">
+        <li>Bank BCA Account Number: <span class="font-semibold text-gray-900">....</span></li>
+        <li>Bank BRI Account Number: <span class="font-semibold text-gray-900">....</span></li>
+    </ol>
+
+    <p class="mb-3 font-normal text-red-600">This offer is valid for 24 hours</p>
+
+    <hr class="h-px my-8 bg-gray-200 border-0">
+    <p class="mb-1">Best regards,</p>
+    <p>The Alpha Seven Force Team</p>
+</div>
+
+{% endblock %}

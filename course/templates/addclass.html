@@ -1,0 +1,272 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="bg-white h-7"></div>
+<div class="container mx-auto p-4 mt-30 pt-20">
+    <h1 class="text-2xl font-bold mb-4">{% trans "Add New Class" %}</h1>
+    
+    {% if messages %}
+      {% for message in messages %}
+        <div class="flex items-center p-4 mb-4 text-sm {% if message.tags == 'success' %}text-green-800 bg-green-50{% elif message.tags == 'error' %}text-red-800 bg-red-50{% else %}text-blue-800 bg-blue-50{% endif %} rounded-lg" role="alert">
+          <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="sr-only">{% trans "Info" %}</span>
+          <div>
+            <span class="font-medium">{% trans "Danger alert!" %}</span>{{ message }}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <!-- Class ID Field -->
+      <div class="mb-4">
+        <label for="classid" class="block text-sm font-medium text-gray-700">{% trans "Class ID" %}</label>
+        {{ form.classid }}
+        {% if form.classid.errors %}
+          <div class="text-red-500 text-sm">{{ form.classid.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Class Name Field -->
+      <div class="mb-4">
+        <label for="classname" class="block text-sm font-medium text-gray-700">{% trans "Class Name" %}</label>
+        {{ form.classname }}
+        {% if form.classname.errors %}
+          <div class="text-red-500 text-sm">{{ form.classname.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Course ID Field -->
+      <div class="mb-4">
+        <label for="courseid" class="block text-sm font-medium text-gray-700">{% trans "Course" %}</label>
+        {{ form.courseid }}
+        {% if form.courseid.errors %}
+          <div class="text-red-500 text-sm">{{ form.courseid.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Presenter Field -->
+      <div class="mb-4">
+        <label for="presenter" class="block text-sm font-medium text-gray-700">{% trans "Presenter" %}</label>
+        {{ form.presenter }}
+        {% if form.presenter.errors %}
+          <div class="text-red-500 text-sm">{{ form.presenter.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Assistant Fields -->
+      <div class="mb-4">
+        <label for="assistant1" class="block text-sm font-medium text-gray-700">{% trans "Assistant 1" %}</label>
+        {{ form.assistant1 }}
+        {% if form.assistant1.errors %}
+          <div class="text-red-500 text-sm">{{ form.assistant1.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="assistant2" class="block text-sm font-medium text-gray-700">{% trans "Assistant 2" %}</label>
+        {{ form.assistant2 }}
+        {% if form.assistant2.errors %}
+          <div class="text-red-500 text-sm">{{ form.assistant2.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="assistant3" class="block text-sm font-medium text-gray-700">{% trans "Assistant 3" %}</label>
+        {{ form.assistant3 }}
+        {% if form.assistant3.errors %}
+          <div class="text-red-500 text-sm">{{ form.assistant3.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Start Date Field -->
+      <div class="mb-4">
+        <label for="startdate" class="block text-sm font-medium text-gray-700">{% trans "Start Date" %}</label>
+        {{ form.startdate }}
+        {% if form.startdate.errors %}
+          <div class="text-red-500 text-sm">{{ form.startdate.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- End Date Field -->
+      <div class="mb-4">
+        <label for="enddate" class="block text-sm font-medium text-gray-700">{% trans "End Date" %}</label>
+        {{ form.enddate }}
+        {% if form.enddate.errors %}
+          <div class="text-red-500 text-sm">{{ form.enddate.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Class Description Field -->
+      <div class="mb-4">
+        <label for="classdesc" class="block text-sm font-medium text-gray-700">{% trans "Class Description" %}</label>
+        {{ form.classdesc }}
+        {% if form.classdesc.errors %}
+          <div class="text-red-500 text-sm">{{ form.classdesc.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Publish Rate Field -->
+      <div class="mb-4">
+        <label for="publishrate" class="block text-sm font-medium text-gray-700">{% trans "Publish Rate" %}</label>
+        {{ form.publishrate }}
+        {% if form.publishrate.errors %}
+          <div class="text-red-500 text-sm">{{ form.publishrate.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Bottom Rate Field -->
+      <div class="mb-4">
+        <label for="bottomrate" class="block text-sm font-medium text-gray-700">{% trans "Bottom Rate" %}</label>
+        {{ form.bottomrate }}
+        {% if form.bottomrate.errors %}
+          <div class="text-red-500 text-sm">{{ form.bottomrate.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Currency Field -->
+      <div class="mb-4">
+        <label for="currency" class="block text-sm font-medium text-gray-700">{% trans "Currency" %}</label>
+        {{ form.currency }}
+        {% if form.currency.errors %}
+          <div class="text-red-500 text-sm">{{ form.currency.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="classtype" class="block text-sm font-medium text-gray-700">{% trans "Class Type" %}</label>
+        {{ form.classtype }}
+        {% if form.classtype.errors %}
+          <div class="text-red-500 text-sm">{{ form.classtype.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="vanue" class="block text-sm font-medium text-gray-700">{% trans "Vanue" %}</label>
+        {{ form.vanue }}
+        {% if form.vanue.errors %}
+          <div class="text-red-500 text-sm">{{ form.vanue.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="deliverymode" class="block text-sm font-medium text-gray-700">{% trans "Delivery Mode" %}</label>
+        {{ form.deliverymode }}
+        {% if form.deliverymode.errors %}
+          <div class="text-red-500 text-sm">{{ form.deliverymode.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-4">
+        <label for="classstatus" class="block text-sm font-medium text-gray-700">{% trans "Class Status" %}</label>
+        {{ form.classstatus }}
+        {% if form.classstatus.errors %}
+          <div class="text-red-500 text-sm">{{ form.classstatus.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Student Max Field -->
+      <div class="mb-4">
+        <label for="studentmax" class="block text-sm font-medium text-gray-700">{% trans "Max Students" %}</label>
+        {{ form.studentmax }}
+        {% if form.studentmax.errors %}
+          <div class="text-red-500 text-sm">{{ form.studentmax.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Student Join Field -->
+      <div class="mb-4">
+        <label for="studentjoin" class="block text-sm font-medium text-gray-700">{% trans "Students Joined" %}</label>
+        {{ form.studentjoin }}
+        {% if form.studentjoin.errors %}
+          <div class="text-red-500 text-sm">{{ form.studentjoin.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Class Picture Field -->
+      <div class="mb-4">
+        <label for="classpic" class="block text-sm font-medium text-gray-700">{% trans "Class Picture" %}</label>
+        {{ form.classpic }}
+        {% if form.classpic.errors %}
+          <div class="text-red-500 text-sm">{{ form.classpic.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Registration URL Field -->
+      <div class="mb-4">
+        <label for="registurl" class="block text-sm font-medium text-gray-700">{% trans "Registration URL" %}</label>
+        {{ form.registurl }}
+        {% if form.registurl.errors %}
+          <div class="text-red-500 text-sm">{{ form.registurl.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Certificate URL Field -->
+      <div class="mb-4">
+        <label for="certificateurl" class="block text-sm font-medium text-gray-700">{% trans "Certificate URL" %}</label>
+        {{ form.certificateurl }}
+        {% if form.certificateurl.errors %}
+          <div class="text-red-500 text-sm">{{ form.certificateurl.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Competence URL Field -->
+      <div class="mb-4">
+        <label for="competenceurl" class="block text-sm font-medium text-gray-700">{% trans "Competence URL" %}</label>
+        {{ form.competenceurl }}
+        {% if form.competenceurl.errors %}
+          <div class="text-red-500 text-sm">{{ form.competenceurl.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Pre-Task Field -->
+      <div class="mb-4">
+        <label for="pretask" class="block text-sm font-medium text-gray-700">{% trans "Pre-Task" %}</label>
+        {{ form.pretask }}
+        {% if form.pretask.errors %}
+          <div class="text-red-500 text-sm">{{ form.pretask.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Zoom Link Field -->
+      <div class="mb-4">
+        <label for="zoomlink" class="block text-sm font-medium text-gray-700">{% trans "Zoom Link" %}</label>
+        {{ form.zoomlink }}
+        {% if form.zoomlink.errors %}
+          <div class="text-red-500 text-sm">{{ form.zoomlink.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Class Photo Field -->
+      <div class="mb-4">
+        <label for="classphoto" class="block text-sm font-medium text-gray-700">{% trans "Class Photo" %}</label>
+        {{ form.classphoto }}
+        {% if form.classphoto.errors %}
+          <div class="text-red-500 text-sm">{{ form.classphoto.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+        {% trans "Submit" %}
+      </button>
+    </form>
+
+    <!-- Error Message Display -->
+    {% if error %}
+      <div class="alert alert-error">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22m11-11H1" />
+          </svg>
+          <span class="ml-2">{{ error }}</span>
+        </div>
+      </div>
+    {% endif %}
+</div>
+{% endblock %}

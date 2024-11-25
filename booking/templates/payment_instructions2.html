@@ -1,0 +1,108 @@
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div style="background-color: #e5ebfa; margin: 40px auto; max-width: 700px; border: 1px solid #e0e7f5; padding: 35px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-radius: 15px;">
+    <div>
+        <h2 style="color: #1a2b4d; font-weight: 800; font-size: 28px; text-align: center; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+            Booking Confirmation and Payment Instructions
+        </h2>
+        <hr style="border: 0; border-top: 2px solid #d1dcf0; margin: 25px 0;">
+        
+        <img src="https://mardhiyahsalma.pythonanywhere.com/static/img/MBW01.jpg" alt="Your Logo" style="width: 100%; height: auto; border-radius: 10px;">
+
+        <h5 style="color: #1a2b4d; font-size: 24px; font-style: italic; margin-bottom: 10px; line-height: 1.4;"> 
+            Dear <strong style="color: #1a2b4d;">{{ name }}</strong>,
+        </h5>    
+        
+        <p style="color: #3a4a6a; font-size: 17px; margin-bottom: 20px; line-height: 1.6;">
+            {% trans "Thank you for choosing Alpha Seven Force as your trusted training partner. We're delighted to confirm your booking and provide the details below:" %}
+        </p>
+
+        <ul style="list-style-type: none; padding: 0; margin-bottom: 25px; font-size: 17px; background: #ffffff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9;">
+                {% trans "1. Booker Name:" %}
+                <span style="font-weight: bold; color: #1a2b4d; float: right;">{{ name }}</span>
+            </li>
+            <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9;">
+                {% trans "2. Event:" %}
+                <span style="font-weight: bold; color: #1a2b4d; float: right;">{{ event_name }}</span>
+            </li>
+            <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9;">
+                {% trans "3. Location:" %}
+                <span style="font-weight: bold;">
+                    <a href="{{ event_url }}" target="_blank" style="text-decoration: none; color: #4668e0; float: right;">{{ event_url }}</a>
+                </span>
+            </li>
+            <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9;">
+                {% trans "4. Time:" %}
+                <span style="font-weight: bold; color: #1a2b4d; float: right;">{{ event_time }}</span>
+            </li>
+            <li style="padding: 12px 0; color: #3a4a6a;">
+                {% trans "5. Referral:" %}
+                <span style="font-weight: bold; color: #1a2b4d; float: right;">{{ referral_name }}</span>
+            </li>
+        </ul>
+
+        <div style="background-color: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); margin-bottom: 35px;">
+            <h3 style="color: #1a2b4d; font-size: 20px; margin-bottom: 20px; text-align: center;">
+                {% trans "Payment Instructions" %}
+            </h3>
+
+            <p style="font-size: 17px; color: #3a4a6a; margin-bottom: 20px; line-height: 1.6;">
+                {% trans "To complete your booking, please make a payment to one of the following accounts:" %}
+            </p>
+
+            <ul style="list-style-type: none; padding: 0; margin-bottom: 25px; font-size: 17px;">
+                <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9; margin-left: 10px;">
+                    {% trans "1. Bank BCA:" %}
+                    <span style="font-weight: bold; color: #1a2b4d; float: right;">1234567890 - Salma Mardhiyah</span>
+                </li>
+                <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9; margin-left: 10px;">
+                    {% trans "2. Bank BRI:" %}
+                    <span style="font-weight: bold; color: #1a2b4d; float: right;">0987654321 - Salma Mardhiyah</span>
+                </li>
+            </ul>
+
+            <p style="font-size: 17px; color: #3a4a6a; margin-bottom: 20px; line-height: 1.6;">
+                {% trans "Once the payment is made, kindly send your payment proof to:" %}
+            </p>
+
+            <ul style="list-style-type: none; padding: 0; margin-bottom: 25px; font-size: 17px;">
+                <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9; margin-left: 10px;">
+                    {% trans "1. Email:" %}
+                    <span style="font-weight: bold; color: #4668e0; float: right;">alphaseven.force@gmail.com</span>
+                </li>
+                <li style="padding: 12px 0; color: #3a4a6a; border-bottom: 1px solid #eef2f9; margin-left: 10px;">
+                    {% trans "2. WhatsApp:" %}
+                    <span style="font-weight: bold; color: #4668e0; float: right;">081234567890</span>
+                </li>
+            </ul>
+
+            <hr style="border: 0; border-top: 2px solid #eef2f9; margin: 25px 0;">
+
+            <div style="background-color: #fff4f4; padding: 20px; border-radius: 10px; border-left: 4px solid #d9534f;">
+                <p style="font-size: 17px; margin-bottom: 0; color: #d9534f; line-height: 1.6;">
+                    <span style="font-weight: bold;">{% trans "Important Note:" %}</span>
+                    {% trans "This offer is valid until " %}
+                    <b>{{ payment_expires_at }} WIB - (UTC+7)</b>
+                    {% trans ". Kindly ensure that payment is completed and the proof of payment is submitted within this period to secure your booking." %}
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div style="text-align: center; margin-top: 5px; padding: 25px; border-radius: 12px;">
+            <p style="font-size: 17px; color: #3a4a6a; line-height: 1.6; margin-bottom: 15px;">
+                {% trans "For further inquiries or assistance, don't hesitate to contact us." %}
+            </p>
+            <p style="font-size: 17px; color: #3a4a6a; font-weight: bold; margin: 0;">
+                {% trans "Best regards," %}
+                <br>
+                <span style="color: #1a2b4d; font-weight: 800; font-size: 20px; display: block; margin-top: 10px;">The Alpha Seven Force Team</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

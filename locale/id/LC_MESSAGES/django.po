@@ -1,0 +1,1018 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-16 00:55+0700\n"
+"PO-Revision-Date: 2024-01-16 00:55+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\account\templates\editmember.html:10
+#: .\account\templates\forgot-acc.html:11
+#: .\account\templates\login-token.html:11
+#: .\account\templates\memberdetail.html:12
+#: .\account\templates\operator\editoperator.html:10
+#: .\account\templates\operator\regisoperator.html:11
+#: .\account\templates\operator\showmember.html:10
+#: .\account\templates\registration.html:11
+msgid "Language"
+msgstr "Bahasa"
+
+#: .\account\templates\editmember.html:20
+#: .\account\templates\operator\editoperator.html:24
+msgid "Edit Profile"
+msgstr "Edit Profil"
+
+#: .\account\templates\editmember.html:32
+msgid "View Member Detail"
+msgstr "Lihat Detail Anggota"
+
+#: .\account\templates\editmember.html:49
+msgid "Profile Information"
+msgstr "Informasi Profil"
+
+#: .\account\templates\editmember.html:56
+#: .\account\templates\memberdetail.html:55
+#: .\account\templates\operator\editoperator.html:45
+#: .\account\templates\operator\editoperator.html:150
+msgid "Member ID"
+msgstr "ID Anggota"
+
+#: .\account\templates\editmember.html:63
+#: .\account\templates\operator\editoperator.html:52
+#: .\account\templates\operator\regisoperator.html:42
+msgid "Current Member Status"
+msgstr "Status Anggota Saat Ini"
+
+#: .\account\templates\editmember.html:66
+#: .\account\templates\operator\editoperator.html:55
+#: .\account\templates\operator\regisoperator.html:45
+msgid "Active"
+msgstr "Aktif"
+
+#: .\account\templates\editmember.html:66
+#: .\account\templates\operator\editoperator.html:56
+#: .\account\templates\operator\regisoperator.html:46
+msgid "Inactive"
+msgstr "Tidak Aktif"
+
+#: .\account\templates\editmember.html:73
+#: .\account\templates\operator\editoperator.html:66
+#: .\account\templates\operator\showmember.html:34
+#: .\booking\templates\booking.html:37
+msgid "Email"
+msgstr "Email"
+
+#: .\account\templates\editmember.html:80
+#: .\account\templates\operator\editoperator.html:76
+#: .\account\templates\operator\regisoperator.html:65
+#: .\account\templates\registration.html:48
+msgid "Password"
+msgstr "Kata Sandi"
+
+#: .\account\templates\editmember.html:87 .\account\templates\login-acc.html:45
+#: .\account\templates\operator\editoperator.html:83
+#: .\account\templates\operator\regisoperator.html:71
+#: .\account\templates\operator\showmember.html:32
+#: .\account\templates\registration.html:54
+msgid "Account Name"
+msgstr "Nama Akun"
+
+#: .\account\templates\editmember.html:97
+#: .\account\templates\operator\editoperator.html:93
+#: .\account\templates\operator\regisoperator.html:81
+#: .\account\templates\operator\showmember.html:33
+#: .\account\templates\registration.html:64
+msgid "KTP Name"
+msgstr "Nama KTP"
+
+#: .\account\templates\editmember.html:107
+#: .\account\templates\operator\editoperator.html:103
+#: .\account\templates\operator\regisoperator.html:92
+#: .\account\templates\registration.html:74
+msgid "First Name"
+msgstr "Nama Depan"
+
+#: .\account\templates\editmember.html:117
+#: .\account\templates\operator\editoperator.html:113
+#: .\account\templates\operator\regisoperator.html:102
+#: .\account\templates\registration.html:84
+msgid "Middle Name"
+msgstr "Nama Tengah"
+
+#: .\account\templates\editmember.html:128
+#: .\account\templates\operator\editoperator.html:123
+#: .\account\templates\operator\regisoperator.html:112
+#: .\account\templates\registration.html:94
+msgid "Last Name"
+msgstr "Nama Belakang"
+
+#: .\account\templates\editmember.html:141
+#: .\account\templates\memberdetail.html:262
+#: .\account\templates\operator\editoperator.html:135
+#: .\account\templates\operator\editoperator.html:393
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: .\account\templates\editmember.html:146
+#: .\account\templates\memberdetail.html:267
+#: .\account\templates\operator\showmember.html:77
+msgid "Are you sure you want to logout?"
+msgstr "Anda yakin ingin keluar?"
+
+#: .\account\templates\editmember.html:147
+#: .\account\templates\memberdetail.html:268
+#: .\account\templates\operator\showmember.html:78
+msgid "Logout"
+msgstr "Keluar"
+
+#: .\account\templates\forgot-acc.html:27
+#: .\account\templates\login-token.html:25
+#: .\account\templates\operator\editoperator.html:18
+#: .\account\templates\operator\regisoperator.html:19
+msgid "Back"
+msgstr "Kembali"
+
+#: .\account\templates\forgot-acc.html:33
+msgid "Forgot Account"
+msgstr "Lupa Akun"
+
+#: .\account\templates\forgot-acc.html:34
+msgid "Please enter your Email to get your account name!"
+msgstr "Mohon masukkan email sesuai dengan nama akun Anda!"
+
+#: .\account\templates\forgot-acc.html:48
+msgid "Enter Email"
+msgstr "Masukkan Email"
+
+#: .\account\templates\forgot-acc.html:52
+msgid "Send"
+msgstr "Kirim"
+
+#: .\account\templates\login-acc.html:13
+msgid "Welcome Back"
+msgstr "Selamat Datang Kembali"
+
+#: .\account\templates\login-acc.html:16
+msgid "Please enter your account name!"
+msgstr "Mohon masukkan nama akun Anda!"
+
+#: .\account\templates\login-acc.html:32
+msgid "User Type"
+msgstr "Tipe Pengguna"
+
+#: .\account\templates\login-acc.html:35
+msgid "Select User Type"
+msgstr "Pilih Tipe Pengguna"
+
+#: .\account\templates\login-acc.html:36
+msgid "Operator"
+msgstr "Operator"
+
+#: .\account\templates\login-acc.html:37
+msgid "Member"
+msgstr "Anggota"
+
+#: .\account\templates\login-acc.html:43
+msgid "Your Account"
+msgstr "Akun Anda"
+
+#: .\account\templates\login-acc.html:54
+msgid "Remember me"
+msgstr "Ingat saya"
+
+#: .\account\templates\login-acc.html:58
+msgid "Forgot Account Name?"
+msgstr "Lupa Nama Akun?"
+
+#: .\account\templates\login-acc.html:63
+msgid "Next"
+msgstr "Selanjutnya"
+
+#: .\account\templates\login-acc.html:67
+msgid "Don't have an account yet?"
+msgstr "Belum punya akun?"
+
+#: .\account\templates\login-acc.html:69
+msgid "Sign up"
+msgstr "Daftar"
+
+#: .\account\templates\login-token.html:32
+msgid "WELCOME"
+msgstr "SELAMAT DATANG"
+
+#: .\account\templates\login-token.html:33
+msgid "Please look in your Email for your token!"
+msgstr "Silakan periksa di Email untuk mendapatkan token Anda!"
+
+#: .\account\templates\login-token.html:47
+msgid "Enter Token"
+msgstr "Masukkan Token"
+
+#: .\account\templates\login-token.html:50
+msgid "Token not received?"
+msgstr "Tidak menerima token?"
+
+#: .\account\templates\login-token.html:51
+msgid "Resend Token"
+msgstr "Kirim ulang token"
+
+#: .\account\templates\memberdetail.html:22
+msgid "Edit Member Detail"
+msgstr "Edit Detail Anggota"
+
+#: .\account\templates\memberdetail.html:36
+msgid "View Profile Information"
+msgstr "Lihat Informasi Profil"
+
+#: .\account\templates\memberdetail.html:44
+msgid "Member Detail"
+msgstr "Detail Anggota"
+
+#: .\account\templates\memberdetail.html:62
+#: .\account\templates\operator\editoperator.html:162
+msgid "Join Date"
+msgstr "Tanggal Bergabung"
+
+#: .\account\templates\memberdetail.html:79
+#: .\account\templates\operator\editoperator.html:173
+msgid "Call Sign"
+msgstr "Nama Panggilan"
+
+#: .\account\templates\memberdetail.html:89
+#: .\account\templates\operator\editoperator.html:186
+msgid "Participant"
+msgstr "Peserta"
+
+#: .\account\templates\memberdetail.html:99
+#: .\account\templates\operator\editoperator.html:198
+msgid "Instructor"
+msgstr "Pengajar"
+
+#: .\account\templates\memberdetail.html:109
+#: .\account\templates\operator\editoperator.html:210
+msgid "Author"
+msgstr "Penulis"
+
+#: .\account\templates\memberdetail.html:119
+#: .\account\templates\operator\editoperator.html:222
+#: .\booking\templates\booking.html:78
+msgid "Referral"
+msgstr "Referral"
+
+#: .\account\templates\memberdetail.html:129
+#: .\account\templates\operator\editoperator.html:234
+msgid "Date of Birth"
+msgstr "Tanggal Lahir"
+
+#: .\account\templates\memberdetail.html:139
+#: .\account\templates\operator\editoperator.html:246
+msgid "KTP Number"
+msgstr "Nomor KTP"
+
+#: .\account\templates\memberdetail.html:149
+#: .\account\templates\operator\editoperator.html:258
+msgid "Tax ID"
+msgstr "ID Pajak"
+
+#: .\account\templates\memberdetail.html:159
+#: .\account\templates\operator\editoperator.html:270
+msgid "Email Main"
+msgstr "Email Utama"
+
+#: .\account\templates\memberdetail.html:169
+#: .\account\templates\operator\editoperator.html:283
+msgid "Email Alternative"
+msgstr "Email Alternatif"
+
+#: .\account\templates\memberdetail.html:179
+#: .\account\templates\operator\editoperator.html:295
+#: .\booking\templates\booking.html:47
+msgid "Phone"
+msgstr "Telepon"
+
+#: .\account\templates\memberdetail.html:189
+#: .\account\templates\operator\editoperator.html:307
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: .\account\templates\memberdetail.html:199
+#: .\account\templates\operator\editoperator.html:319
+msgid "Telegram"
+msgstr "Telegram"
+
+#: .\account\templates\memberdetail.html:209
+#: .\account\templates\operator\editoperator.html:331
+msgid "Referral ID"
+msgstr "ID Referensi"
+
+#: .\account\templates\memberdetail.html:219
+#: .\account\templates\operator\editoperator.html:343
+msgid "Paid Class"
+msgstr "Kelas Berbayar"
+
+#: .\account\templates\memberdetail.html:229
+#: .\account\templates\operator\editoperator.html:355
+msgid "Free Class"
+msgstr "Kelas Gratis"
+
+#: .\account\templates\memberdetail.html:239
+#: .\account\templates\operator\editoperator.html:367
+msgid "Point Total"
+msgstr "Total Poin"
+
+#: .\account\templates\memberdetail.html:249
+#: .\account\templates\operator\editoperator.html:379
+msgid "Point Redeem"
+msgstr "Penukaran Poin"
+
+#: .\account\templates\operator\editoperator.html:39
+msgid "General Member Information"
+msgstr "Informasi Umum Anggota"
+
+#: .\account\templates\operator\editoperator.html:135
+#: .\account\templates\operator\editoperator.html:393
+msgid "Are you sure you want to change the data?"
+msgstr "Apakah Anda yakin ingin mengubah data ini?"
+
+#: .\account\templates\operator\editoperator.html:143
+msgid "Member Detail Information"
+msgstr "Informasi Detail Anggota"
+
+#: .\account\templates\operator\editoperator.html:154
+msgid "No Member ID available"
+msgstr "ID Anggota tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:165
+msgid "No join date available"
+msgstr "Tanggal bergabung tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:176
+msgid "No call sign available"
+msgstr "Nama panggilan tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:189
+msgid "No participant available"
+msgstr "Peserta tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:201
+msgid "No instructor available"
+msgstr "Pengajar tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:213
+msgid "No author available"
+msgstr "Penulis tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:225
+msgid "No referral available"
+msgstr "Referensi tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:237
+msgid "No date of birth available"
+msgstr "Tanggal lahir tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:249
+msgid "No ktp number available"
+msgstr "Nomor KTP tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:261
+msgid "No tax ID available"
+msgstr "ID Pajak tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:273
+msgid "No email main available"
+msgstr "Email utama tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:286
+msgid "No email alternative available"
+msgstr "Email alternatif tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:298
+msgid "No phone number available"
+msgstr "Nomor telepon tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:310
+msgid "No WhatsApp available"
+msgstr "WhatsApp tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:322
+msgid "No Telegram available"
+msgstr "Telegram tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:334
+msgid "No Referral ID available"
+msgstr "ID Referensi tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:346
+msgid "No Paid Class available"
+msgstr "Kelas Berbayar tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:358
+msgid "No Free Class available"
+msgstr "Kelas Gratis tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:370
+msgid "No Point Total available"
+msgstr "Total Poin tidak tersedia"
+
+#: .\account\templates\operator\editoperator.html:382
+msgid "No Point Redeem available"
+msgstr "Penukaran Poin tidak tersedia"
+
+#: .\account\templates\operator\regisoperator.html:27
+msgid "REGISTRATION BY OPERATOR"
+msgstr "REGISTRASI OLEH OPERATOR"
+
+#: .\account\templates\operator\regisoperator.html:122
+#: .\account\templates\registration.html:104
+#: .\booking\templates\booking.html:90
+msgid "Sign Up"
+msgstr "Daftar"
+
+#: .\account\templates\operator\showmember.html:23
+#: .\account\templates\operator\showmember.html:112
+msgid "Add Member"
+msgstr "Tambah Anggota"
+
+#: .\account\templates\operator\showmember.html:35
+msgid "Action"
+msgstr "Aksi"
+
+#: .\account\templates\operator\showmember.html:46
+msgid "Update"
+msgstr "Perbarui"
+
+#: .\account\templates\operator\showmember.html:53
+msgid "Delete"
+msgstr "Hapus"
+
+#: .\account\templates\operator\showmember.html:53
+msgid "Are you sure you want to delete"
+msgstr "Apakah Anda yakin ingin menghapus"
+
+#: .\account\templates\operator\showmember.html:59
+msgid "You do not have permission to delete"
+msgstr "Anda tidak memiliki izin untuk menghapus"
+
+#: .\account\templates\operator\showmember.html:67
+msgid "No members found."
+msgstr "Tidak ada anggota ditemukan."
+
+#: .\account\templates\operator\showmember.html:89
+#: .\account\templates\operator\showmember.html:98
+msgid "Member List"
+msgstr "Daftar Anggota"
+
+#: .\account\templates\operator\showmember.html:93
+msgid "Overview"
+msgstr "Ikhtisar"
+
+#: .\account\templates\operator\showmember.html:105
+msgid "Class"
+msgstr "Kelas"
+
+#: .\account\templates\registration.html:23
+msgid "REGISTRATION"
+msgstr "REGISTRASI"
+
+#: .\account\views.py:55 .\account\views.py:125
+msgid "Verification token sent! Please check your email."
+msgstr "Token verifikasi telah dikirim! Silakan periksa email Anda."
+
+#: .\account\views.py:73
+msgid "Account name cannot be empty!"
+msgstr "Nama akun tidak boleh kosong!"
+
+#: .\account\views.py:101
+msgid "Operator does not exist. Please try again!"
+msgstr "Operator tidak ada. Silakan coba lagi!"
+
+#: .\account\views.py:143
+msgid "Account name not found in session!"
+msgstr "Nama akun tidak ditemukan dalam sesi!"
+
+#: .\account\views.py:172
+msgid "Account created successfully!"
+msgstr "Akun berhasil dibuat!"
+
+#: .\account\views.py:177 .\account\views.py:189 .\account\views.py:207
+#: .\account\views.py:225
+msgid "Invalid token! Please enter the correct one."
+msgstr "Token tidak valid! Silakan masukkan yang benar."
+
+#: .\account\views.py:186
+msgid "Token verified successfully!"
+msgstr "Token berhasil diverifikasi!"
+
+#: .\account\views.py:249 .\account\views.py:268 .\account\views.py:288
+msgid "A new token has been sent to your email!"
+msgstr "Token baru telah dikirim ke email Anda!"
+
+#: .\account\views.py:299
+msgid "Please Enter Your Main Email!"
+msgstr "Silakan Masukkan Email Utama Anda!"
+
+#: .\account\views.py:318
+msgid "Account name has been sent! Please check your email."
+msgstr "Nama akun telah dikirim! Silakan periksa email Anda."
+
+#: .\account\views.py:322
+msgid "Account does not exist. Please try again or sign up!"
+msgstr "Akun tidak ada. Silakan coba lagi atau daftar!"
+
+#: .\account\views.py:378 .\account\views.py:483
+msgid "Failed to update. Please check your input."
+msgstr "Gagal memperbarui. Silakan periksa input Anda."
+
+#: .\booking\templates\booking.html:12
+msgid "EVENT BOOKING"
+msgstr "PEMESANAN ACARA"
+
+#: .\booking\templates\booking.html:27
+msgid "Name"
+msgstr "Nama Lengkap"
+
+#: .\booking\templates\booking.html:57
+msgid "Is your phone number registered with WhatsApp?"
+msgstr "Apakah nomor telepon Anda terdaftar di WhatsApp?"
+
+#: .\booking\templates\booking.html:59
+msgid "Yes"
+msgstr "Ya"
+
+#: .\booking\templates\booking.html:60
+msgid "No"
+msgstr "Tidak"
+
+#: .\booking\templates\booking.html:68
+msgid "Event"
+msgstr "Acara"
+
+#: .\booking\templates\booking.html:88
+msgid "Note: Please fill the * required fields"
+msgstr "Catatan: Silakan isi bidang * yang diperlukan"
+
+#: .\booking\templates\event.html:15
+msgid "Time"
+msgstr "Waktu"
+
+#: .\booking\templates\event.html:18
+msgid "Location"
+msgstr "Lokasi"
+
+#: .\booking\templates\event.html:21
+msgid "Cost"
+msgstr "Biaya"
+
+#: .\booking\templates\event.html:28
+msgid "Book Now"
+msgstr "Daftar Sekarang"
+
+#: .\booking\templates\payment_instructions.html:7
+msgid "Thank you for choosing Alpha Seven Force for your training needs"
+msgstr "Terima kasih telah memilih Alpha Seven Force untuk kebutuhan pelatihan Anda"
+
+#: .\booking\templates\payment_instructions.html:12
+msgid "We have received the following booking:"
+msgstr "Kami telah menerima pemesanan berikut:"
+
+#: .\booking\templates\payment_instructions.html:17
+msgid "1. Booker Name:"
+msgstr "1. Nama Pemesan:"
+
+#: .\booking\templates\payment_instructions.html:21
+msgid "2. Event:"
+msgstr "2. Acara:"
+
+#: .\booking\templates\payment_instructions.html:25
+msgid "3. Location:"
+msgstr "3. Lokasi:"
+
+#: .\booking\templates\payment_instructions.html:31
+msgid "4. Time:"
+msgstr "4. Waktu:"
+
+#: .\booking\templates\payment_instructions.html:37
+msgid "Payment can be made to the following accounts:"
+msgstr "Pembayaran dapat dilakukan ke akun berikut:"
+
+#: .\booking\templates\payment_instructions.html:42
+msgid "1. Bank BCA Account Number:"
+msgstr "1. Nomor Rekening Bank BCA:"
+
+#: .\booking\templates\payment_instructions.html:46
+msgid "2. Bank BRI Account Number:"
+msgstr "2. Nomor Rekening Bank BRI:"
+
+#: .\booking\templates\payment_instructions.html:52
+msgid "This offer is valid for 24 hours"
+msgstr "Penawaran ini berlaku selama 24 jam"
+
+#: .\booking\templates\payment_instructions.html:56
+msgid "Best regards,"
+msgstr "Terima kasih,"
+
+#: .\booking\templates\payment_instructions.html:57
+msgid "The Alpha Seven Force Team"
+msgstr "Tim Alpha Seven Force"
+
+#: .\static\templates\footer.html:7
+msgid "All Rights Reserved."
+msgstr "Hak Cipta Dilindungi."
+
+#: .\static\templates\footer.html:11 .\static\templates\header.html:34
+msgid "About"
+msgstr "Tentang"
+
+#: .\static\templates\footer.html:14
+msgid "Privacy Policy"
+msgstr "Kebijakan Privasi"
+
+#: .\static\templates\footer.html:17
+msgid "Licensing"
+msgstr "Lisensi"
+
+#: .\static\templates\footer.html:20
+msgid "Contact"
+msgstr "Kontak"
+
+#: .\static\templates\header.html:8
+msgid "Alpha Seven Force"
+msgstr "Alpha Seven Force"
+
+#: .\static\templates\header.html:16 .\webapp\settings.py:138
+msgid "English"
+msgstr "Inggris"
+
+#: .\static\templates\header.html:19 .\webapp\settings.py:139
+msgid "Indonesian"
+msgstr "Indonesia"
+
+#: .\static\templates\header.html:30
+msgid "Home"
+msgstr "Beranda"
+
+#: .\static\templates\header.html:38
+msgid "Services"
+msgstr "Layanan"
+
+msgid "Account"
+msgstr "Akun"
+
+msgid "Enter Account Name!"
+msgstr "Masukkan Nama Akun!"
+
+msgid "Create account"
+msgstr "Membuat akun"
+
+msgid "Please enter your Email to get your account name"
+msgstr "Mohon masukkan akun Email Anda yang sesuai"
+
+msgid "Pricing"
+msgstr "Harga"
+
+msgid "Member Table"
+msgstr "Tabel Anggota"
+
+msgid "Edit Venue"
+msgstr "Edit Venue"
+
+msgid "Submit"
+msgstr "Kirim"
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Edit Course Material"
+msgstr "Edit Materi Kursus"
+
+msgid "Edit Certificate"
+msgstr "Edit Sertifikat"
+
+msgid "Edit Class"
+msgstr "Edit Kelas"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Danger alert!"
+msgstr "Peringatan Bahaya!"
+
+msgid "MEMBER LIST"
+msgstr "DAFTAR ANGGOTA"
+
+msgid "Add MEMBER"
+msgstr "Tambah ANGGOTA"
+
+msgid "CLASSES LIST"
+msgstr "DAFTAR KELAS"
+
+msgid "Add CLASS"
+msgstr "Tambah KELAS"
+
+msgid "Class ID"
+msgstr "ID Kelas"
+
+msgid "Class Name"
+msgstr "Nama Kelas"
+
+msgid "Class Type"
+msgstr "Tipe Kelas"
+
+msgid "Start Date"
+msgstr "Tanggal Mulai"
+
+msgid "End Date"
+msgstr "Tanggal Selesai"
+
+msgid "No classes found."
+msgstr "Tidak ada kelas yang ditemukan."
+
+msgid "COURSE MATERIAL LIST"
+msgstr "DAFTAR MATERI KURSUS"
+
+msgid "Add COURSE"
+msgstr "Tambah KURSUS"
+
+msgid "Course ID"
+msgstr "ID Kursus"
+
+msgid "Course Name"
+msgstr "Nama Kursus"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Submission"
+msgstr "Pengajuan"
+
+msgid "VENUE LIST"
+msgstr "DAFTAR VENUE"
+
+msgid "Add Venue"
+msgstr "Tambah Venue"
+
+msgid "Venue Name"
+msgstr "Nama Venue"
+
+msgid "CERTIFIED INSTRUCTOR"
+msgstr "INSTRUKTUR BERSERTIFIKAT"
+
+msgid "Add Certified Instructor"
+msgstr "Tambah Instruktur Bersertifikat"
+
+msgid "Instructor Name"
+msgstr "Nama Instruktur"
+
+msgid "CERTIFIED ASSISTANT"
+msgstr "ASISTEN BERSERTIFIKAT"
+
+msgid "Add Certified Assistant"
+msgstr "Tambah Asisten Bersertifikat"
+
+msgid "Assistant Name"
+msgstr "Nama Asisten"
+
+msgid "Your Operator Account"
+msgstr "Akun Operator Anda"
+
+msgid "Operator Account Name"
+msgstr "Nama Akun Operator"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "New courses were launched! See what's new"
+msgstr "Kursus baru telah diluncurkan! Lihat yang baru"
+
+msgid "Welcome to Our Courses"
+msgstr "Selamat datang di Kursus Kami"
+
+msgid "Discover a variety of courses that help unlock your potential and boost your knowledge."
+msgstr "Temukan berbagai kursus yang membantu membuka potensi Anda dan meningkatkan pengetahuan Anda."
+
+msgid "Login to Get Started"
+msgstr "Masuk untuk Memulai"
+
+msgid "Latest Event"
+msgstr "Acara Terbaru"
+
+msgid "Read more"
+msgstr "Baca lebih lanjut"
+
+msgid "Member does not exist. Please try again!"
+msgstr "Anggota tidak ada. Silakan coba lagi!"
+
+msgid "Class updated successfully!"
+msgstr "Kelas berhasil diperbarui!"
+
+msgid "Venue updated successfully!"
+msgstr "Venue berhasil diperbarui!"
+
+msgid "Instructor updated successfully!"
+msgstr "Instruktur berhasil diperbarui!"
+
+msgid "Assistant updated successfully!"
+msgstr "Asisten berhasil diperbarui!"
+
+msgid "Invalid data. Please try again."
+msgstr "Data tidak valid. Silakan coba lagi."
+
+msgid "More Details"
+msgstr "Lebih Banyak Detail"
+
+msgid "Event Booking"
+msgstr "Pemesan Acara"
+
+msgid "Is your phone number registered with telegram?"
+msgstr "Apakah nomor telepon Anda terdaftar di Telegram?"
+
+msgid "Note: Please fill the required fields"
+msgstr "Catatan: Silakan isi kolom yang diperlukan"
+
+msgid "Detail of Booking Confirmation and Payment Instructions"
+msgstr "Detail Konfirmasi Pemesanan dan Instruksi Pembayaran"
+
+msgid "Dear"
+msgstr "Kepada"
+
+msgid "Alhamdulillah, we have received a booking request with the details below:"
+msgstr "Alhamdulillah, kami telah menerima permintaan pemesanan dengan detail di bawah ini:"
+
+msgid "1. Name:"
+msgstr "1. Nama:"
+
+msgid "2. Email:"
+msgstr "2. Email:"
+
+msgid "3. Phone:"
+msgstr "3. Telepon:"
+
+msgid "4. Event:"
+msgstr "4. Acara:"
+
+msgid "5. Location:"
+msgstr "5. Lokasi:"
+
+msgid "6. Time:"
+msgstr "6. Waktu:"
+
+msgid "7. Referral:"
+msgstr "7. Referensi:"
+
+msgid "Payment Instructions"
+msgstr "Instruksi Pembayaran"
+
+msgid "To complete your booking, please make a payment to one of the following accounts:"
+msgstr "Untuk menyelesaikan pemesanan Anda, silakan lakukan pembayaran ke salah satu rekening berikut:"
+
+msgid "1. Bank BCA:"
+msgstr "1. Bank BCA:"
+
+msgid "2. Bank BRI:"
+msgstr "2. Bank BRI:"
+
+msgid "Once the payment is made, kindly send your payment proof to:"
+msgstr "Setelah pembayaran dilakukan, silakan kirim bukti pembayaran Anda ke:"
+
+msgid "1. Email:"
+msgstr "1. Email:"
+
+msgid "2. WhatsApp:"
+msgstr "2. WhatsApp:"
+
+msgid "Important:"
+msgstr "Penting:"
+
+msgid "This offer is valid until "
+msgstr "Penawaran ini berlaku hingga "
+
+msgid "Kindly ensure that payment is completed and the proof of payment is submitted within this period to secure your booking."
+msgstr "Pastikan bahwa pembayaran selesai dan bukti pembayaran diserahkan dalam periode ini untuk mengamankan pemesanan Anda."
+
+msgid "Email us for any questions or concerns"
+msgstr "Email kami untuk pertanyaan atau kekhawatiran"
+
+msgid "Call"
+msgstr "Telepon"
+
+msgid "Feel free to drop a call or a chat with our great team"
+msgstr "Jangan ragu untuk menghubungi kami melalui telepon atau chat dengan tim kami yang hebat"
+
+msgid "Website"
+msgstr "Situs Web"
+
+msgid "Check our website for more information."
+msgstr "Periksa situs web kami untuk informasi lebih lanjut."
+
+msgid "Our Website"
+msgstr "Situs Web Kami"
+
+msgid "Event doesn't exist"
+msgstr "Acara tidak ada"
+
+msgid "Thank you for your booking! Please pay the payment before {draft_booking.payment_expires_at.strftime('%d-%m-%y %H:%M')} WIB. Check your email for payment instructions."
+msgstr "Terima kasih atas pemesanan Anda! Silakan lakukan pembayaran sebelum {draft_booking.payment_expires_at.strftime('%d-%m-%y %H:%M')} WIB. Periksa email Anda untuk instruksi pembayaran."
+
+msgid "Add Certificate"
+msgstr "Tambah Sertifikat"
+
+msgid "Add New Class"
+msgstr "Tambah Kelas Baru"
+
+msgid "Course"
+msgstr "Kursus"
+
+msgid "Presenter"
+msgstr "Pembicara"
+
+msgid "Assistant 1"
+msgstr "Asisten 1"
+
+msgid "Assistant 2"
+msgstr "Asisten 2"
+
+msgid "Assistant 3"
+msgstr "Asisten 3"
+
+msgid "Class Description"
+msgstr "Deskripsi Kelas"
+
+msgid "Publish Rate"
+msgstr "Tarif Publikasi"
+
+msgid "Bottom Rate"
+msgstr "Tarif Terendah"
+
+msgid "Currency"
+msgstr "Mata Uang"
+
+msgid "Vanue"
+msgstr "Venue"
+
+msgid "Delivery Mode"
+msgstr "Mode Pengiriman"
+
+msgid "Class Status"
+msgstr "Status Kelas"
+
+msgid "Max Students"
+msgstr "Maksimal Siswa"
+
+msgid "Students Joined"
+msgstr "Siswa Bergabung"
+
+msgid "Class Picture"
+msgstr "Gambar Kelas"
+
+msgid "Registration URL"
+msgstr "URL Pendaftaran"
+
+msgid "Certificate URL"
+msgstr "URL Sertifikat"
+
+msgid "Competence URL"
+msgstr "URL Kompetensi"
+
+msgid "Pre-Task"
+msgstr "Tugas Awal"
+
+msgid "Zoom Link"
+msgstr "Tautan Zoom"
+
+msgid "Class Photo"
+msgstr "Foto Kelas"
+
+msgid "Add New Course Material"
+msgstr "Tambah Materi Kursus Baru"
+
+msgid "Please Input only three initial for courseid"
+msgstr "Silakan masukkan hanya tiga huruf awal untuk ID kursus"
+
+msgid "Assistant 1, 2, 3 must be different person!"
+msgstr "Asisten 1, 2, 3 harus orang yang berbeda!"
+
+msgid "Course successfully added!"
+msgstr "Kursus berhasil ditambahkan!"
+
+msgid "Failed to add course"
+msgstr "Gagal menambahkan kursus"
+
+msgid "Venue successfully added!"
+msgstr "Venue berhasil ditambahkan!"
+
+msgid "Certificate Assistant successfully added!"
+msgstr "Asisten Sertifikat berhasil ditambahkan!"
+
+msgid "Certificate instructor successfully added!"
+msgstr "Instruktur Sertifikat berhasil ditambahkan!"

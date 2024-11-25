@@ -1,0 +1,83 @@
+rename folder di bash
+mv backend_copy backend_copyv2
+
+
+python manage.py makemigrations account
+python manage.py migrate account
+
+python manage.py makemigrations course
+python manage.py migrate course
+
+python manage.py makemigrations booking
+python manage.py migrate booking
+
+python manage.py migrate
+python manage.py createsuperuser
+
+JANGAN LUPA lakukan managed = True pada table lookup di course ya
+
+ISI LOOKUP PK PERINTAH DIBAWAH DENGAN CARA
+sqlite3 db.sqlite
+.tables 
+INSERT INTO LOOKUP (lookkey, lookcode, lookname, lookdesc) VALUES
+-- LANGUAGE
+('AA', 'a', 'bahasa Indonesia', NULL),
+('AA', 'b', 'English', NULL),
+('AA', 'c', 'mandarin', NULL),
+
+-- COURSE TYPE
+('BA', 'a', 'short with out lab / practice', NULL),
+('BA', 'b', 'short with lab / practice', NULL),
+('BA', 'c', 'full day with out lab / practice', NULL),
+('BA', 'd', 'full day with lab / practice', NULL),
+('BA', 'e', 'some days with out lab / practice', NULL),
+('BA', 'f', 'some days with lab / practice', NULL),
+
+-- CLASS TYPE
+('BB', 'a', 'paid class', NULL),
+('BB', 'b', 'free class', NULL),
+('BB', 'c', 'promo class', NULL),
+('BB', 'd', 'super promo class', NULL),
+('BB', 'e', 'bundle', NULL),
+
+-- DELIVERY TYPE
+('BC', 'a', 'full online', NULL),
+('BC', 'b', 'full offline', NULL),
+('BC', 'c', 'Hybrid', NULL),
+('BC', 'd', 'Blended', NULL),
+
+-- CLASS STATUS
+('BD', 'a', 'draft', NULL),
+('BD', 'b', 'almost final', NULL),
+('BD', 'c', 'final', NULL),
+('BD', 'd', 'published', NULL),
+('BD', 'e', 'running', NULL),
+('BD', 'f', 'completed', NULL),
+('BD', 'g', 'postponed', NULL),
+('BD', 'h', 'canceled', NULL),
+
+-- COURSE CATEGORY
+('BE', 'a', 'business', NULL),
+('BE', 'b', 'self improvement', NULL),
+('BE', 'c', 'AI', NULL),
+('BE', 'd', 'IT', NULL),
+('BE', 'e', 'hobby', NULL),
+
+-- CURRENCY
+('CA', 'a', 'IDR', NULL),
+('CA', 'b', 'SGD', NULL),
+('CA', 'c', 'USD', NULL),
+('CA', 'd', 'GBP', NULL),
+('CA', 'e', 'AUD', NULL),
+('CA', 'f', 'BTC', NULL),
+
+-- BOOKING
+('DA', 'a', 'booked', NULL),
+('DA', 'b', 'paid', NULL),
+('DA', 'c', 'expired', NULL),
+
+-- USER GROUP
+('EA', 'a', 'general admin', NULL),
+('EA', 'b', 'finance', NULL),
+('EA', 'c', 'academic admin', NULL),
+('EA', 'd', 'IT admin', NULL);

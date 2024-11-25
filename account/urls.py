@@ -1,0 +1,36 @@
+from django.urls import path
+from account import views  
+from django.contrib.auth.decorators import login_required
+
+urlpatterns = (
+    path('', views.home, name='home'), 
+    path('login/', views.loginacc, name='loginacc'), 
+    path('login/admin', views.loginadmin, name='loginadmin'), 
+    # path('login/', views.CustomLoginView.as_view(), name='login'),
+    path('forgotacc/', views.forgot_acc, name='forgot_acc'), 
+    path('token/', views.logintoken, name='logintoken'), 
+    path('resend_token/', views.resend_token, name='resend_token'), 
+    path('regis/', views.regis, name='regis'),   
+    path('edit/<str:memberid>/', views.editmember, name='editmember'),
+    path('logout/', views.logout_view, name='logout'),
+    # path('edit/<str:memberid>/', views.editmember, name='editmember'),
+    path('update/<str:memberid>/', views.update, name='update'),
+    path('memberdetail/<str:memberid>/', views.memberdetail, name='memberdetail'),
+    path('updatememberdetail/<str:memberid>/', views.update_member_detail, name='updatememberdetail'),
+    path('edit-operator/<str:memberid>/', views.editoperator, name='editoperator'),
+    path('delete/member/<str:memberid>/', views.destroymember, name='destroymember'),
+    path('delete/class/<str:classid>/', views.destroyclass, name='destroyclass'),
+    path('delete/course/<str:courseid>/', views.destroycourse, name='destroycourse'),
+    path('delete/venue/<str:venuename>/', views.destroyvenue, name='destroyvenue'),
+    path('delete/instructor/<str:courseid>/<str:instructor>/', views.destroyinstructor, name='destroyinstructor'),
+    path('delete/assistant/<str:courseid>/<str:assistant>/', views.destroyassistant, name='destroyassistant'),
+    path('updatoperatorv1/<str:memberid>/', views.updateoperatorv1, name='updateoperatorv1'),
+    path('updatoperatorv2/<str:memberid>/', views.updateoperatorv2, name='updateoperatorv2'),
+    path('regisoperator/', views.regisoperator, name='regisoperator'),
+    path('showmember/', views.showmember, name='showmember'),
+    path('editclass/<str:classid>/', views.editclass, name='editclass'),
+    path('editcourse/<str:courseid>/', views.editcourse, name='editcourse'),
+    path('editvenue/<str:venuename>/', views.editvenue, name='editvenue'),
+    path('editinstructor/<str:courseid>/<str:instructor>/', views.editinstructor, name='editinstructor'),
+    path('editassistant/<str:courseid>/<str:assistant>/', views.editassistant, name='editassistant'),
+)

@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+🎓 *BOOKING CONFIRMATION AND PAYMENT INSTRUCTIONS*
+
+Dear *{{ name }}*,
+
+Alhamdulillah, we have received a booking request with the details below:
+
+📋 *Booking Details:*
+• Booker Name: {{ name }}
+• Event: {{ event_name }} 
+• Location: {{ event_url }}
+• Time: {{ event_time }}
+• Referral: {{ referral_name }}
+
+💳 *Payment Instructions*
+To complete your booking, please make a payment to one of the following accounts:
+
+1. Bank BCA:
+   1234567890 - Salma Mardhiyah
+
+2. Bank BRI:  
+   0987654321 - Salma Mardhiyah
+
+📤 *Send Payment Proof to:*
+• Email: alphaseven.force@gmail.com
+• WhatsApp: 081234567890
+
+⚠️ *IMPORTANT NOTE:*
+This offer is valid until:
+• {{ payment_expires_at }} WIB (UTC+7)
+• {{ payment_expires_at2 }} SGT (UTC+8)
+
+Please ensure payment is completed and proof submitted within this period to secure your booking.
+
+For further inquiries or assistance, don't hesitate to contact us.
+
+Best regards,
+*The Alpha Seven Force Team*
+
+{% endblock %}
